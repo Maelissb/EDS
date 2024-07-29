@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+        <link rel="stylesheet" href="{{ asset('styles/style.css') }}">
+        
+
+
+
+        {% block javascripts %}
+
+            {% block importmap %}{{ importmap('app') }}{% endblock %}
+        {% endblock %}
+    </head>
+    
+
+    <body class="bodyHome">
+    <header>
+            <nav class="scrollMenu">
+                <div>
+                <a><img class="logo" src="/img/logo.jpg" alt="logo EDS"></a>
+
+                </div>
+                <ul class="menu scrollMenu">
+                    <li class="liHome"><a href="{{path('home')}}">Accueil</a></li>
+                    <li class="liHome"><a href="{{path('entreprise')}}">Notre Entreprise</a></li>
+
+                    <li><a href="/">Dépannage</a>
+                        <ul class="submenu">
+                            <li><a href="{{path('depannage_plomberie')}}">Plomberie</a></li>
+                            <li><a href="{{path('depannage_plomberie')}}">Chauffage</a></li>
+                            <li><a href="{{path('depannage_plomberie')}}">Pac</a></li>
+                            <li><a href="{{path('depannage_plomberie')}}">Electricité</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="liHome"><a href="/">Entretien</a>
+                        <ul class="submenu">
+                            <li><a href="/">Pompe a chaleur</a></li>
+                            <li><a href="/">Chauffage fioul, gaz...</a></li>
+                            <li><a href="/">Oköfen</a></li>
+                        </ul>
+                    </li>
+                    <li class="liHome"><a href="/">Contact</a></li>
+                </ul>
+            </nav>
+    </header>
+
+    <div class="blue-line"></div>
+
+    {% block body %}
+      
+    {% endblock %}
+
+
+
+
+
+    </body>
+    
+</html>

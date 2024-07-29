@@ -1,0 +1,61 @@
+{% extends "base_admin.html.twig" %}
+
+{% block title %}Admin{% endblock %}
+
+{% block body %}
+
+<h1 class="title">Home</h1>
+
+{{ form_start(headerForm) }}
+<div class="form-container">
+    <div class="form-group">
+        {{ form_row(headerForm.logo, {'attr': {'class': 'form-input'}}) }} {# Affiche le champ 'logo' #}
+    </div>
+    {% if header.headBand is defined %}
+        <img src="{{ asset('img/' ~ header.headBand) }}" alt="Image" class="form-image"> {#the image#}
+    {% endif %}
+    <div class="form-group">
+        {{ form_row(headerForm.headBand, {'attr': {'class': 'form-input'}}) }} {# Affiche le champ 'headBand' pour télécharger l'image #}
+    </div>
+    <div>
+        <button class="submit-button">Envoyer</button>
+    </div>
+</div>
+{{ form_end(headerForm) }}
+
+
+<div class="blue-line"></div>
+
+{# Presentation General******************************************** #}
+
+{{ form_start(presentationForm) }}
+<div class="form-container">
+    {% if presentation.img is defined %}
+        <img src="{{ asset('img/' ~ presentation.img) }}" alt="Image" class="form-image"> {#the image#}
+    {% endif %}
+    <div class="form-group">
+        {{ form_row(presentationForm, {'attr': {'class': 'form-input'}}) }}
+    </div>
+    <div>
+        <button class="submit-button">Envoyer</button>
+    </div>
+</div>
+{{ form_end(presentationForm) }}
+
+<div class="blue-line"></div>
+
+{# Entreprise******************************************** #}
+{{ form_start(entrepriseForm) }}
+<div class="form-container">
+    {% if entreprise.img is defined and entreprise.img %}
+        <img src="{{ asset('uploads/' ~ entreprise.img) }}" alt="Image" class="form-image">
+    {% endif %}
+    <div class="form-group">
+        {{ form_row(entrepriseForm, {'attr': {'class': 'form-input'}}) }}
+    </div>
+    <div>
+        <button class="submit-button">Envoyer</button>
+    </div>
+</div>
+{{ form_end(entrepriseForm) }}
+{% endblock %}

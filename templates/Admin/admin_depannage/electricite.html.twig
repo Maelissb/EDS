@@ -1,0 +1,32 @@
+{% extends "base_admin.html.twig" %}
+{% block title %}Dépannage électricité{% endblock %}
+{% block body %}
+<h1>Dépannage électricité</h1>
+
+<div class="form-container">
+    {{ form_start(depannageForm) }}
+    {{ form_row(depannageForm) }}
+    <div>
+        <button>Envoyer</button>
+    </div>
+    {{ form_end(depannageForm)}}
+</div>
+
+<div class="form-container">
+    {{ form_start(labelForm) }}
+    {{ form_row(labelForm) }}
+    <div>
+        <button>Envoyer</button>
+    </div>
+    {{ form_end(labelForm)}}
+</div>
+
+<div class="form-container">
+    {{ form_start(interventionForm) }}
+    {{ form_row(interventionForm) }}
+    <div>
+        <button>Envoyer</button>
+    </div>
+    {{ form_end(interventionForm)}}
+</div>
+{% endblock %}

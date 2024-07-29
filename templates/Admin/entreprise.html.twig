@@ -1,0 +1,74 @@
+{% extends "base_admin.html.twig" %}
+{% block title %}Notre entreprise{% endblock %}
+{% block body %}
+<h1 class="title">Notre entreprise</h1>
+
+<div class="form-container">
+    {{ form_start(serviceForm) }}
+    
+    {% if service.img is defined and service.img %}
+        <img src="{{ asset('img/' ~ service.img) }}" alt="Image" class="form-image"> {# the image #}
+    {% endif %}
+    
+    <div class="form-group">
+        {{ form_row(serviceForm.Title, {'attr': {'class': 'form-input'}}) }}
+    </div>
+    
+    <div class="form-group">
+        {{ form_row(serviceForm.img, {'attr': {'class': 'form-input'}}) }} {# Affiche le champ pour télécharger l'image #}
+    </div>
+    
+    <div class="form-group">
+        {{ form_row(serviceForm.TXT, {'attr': {'class': 'form-input'}}) }}
+    </div
+    <div>
+        <button class="submit-button">Envoyer</button>
+    </div>
+    
+    {{ form_end(serviceForm) }}
+</div>
+
+
+
+{#NOTRE HISTOIRE#}
+{{ form_start(entrepriseForm) }}
+<div class="form-container">
+     {% if entreprise.img is defined %}
+        <img src="{{ asset('img/' ~ entreprise.img) }}" alt="Image" class="form-image"> {#the image#}
+     {% endif %}
+    <div class="form-group">
+        {{ form_row(entrepriseForm, {'attr': {'class': 'form-input'}}) }}
+    </div>
+    <div>
+        <button class="submit-button">Envoyer</button>
+    </div>
+</div>
+{{ form_end(entrepriseForm) }} 
+
+<div class="form-container">
+    {{ form_start(teamForm) }}
+    {% if team.img is defined %}
+        <img src="{{ asset('img/' ~ team.img) }}" alt="Image" class="form-image"> {#the image#}
+    {% endif %}
+    {{ form_row(teamForm) }}
+     <div>
+        <button class="submit-button">Envoyer</button>
+    </div>
+    {{ form_end(teamForm) }}
+    
+</div>  
+
+<div class="form-container">
+{{ form_start(brandForm) }}
+ {% if brand.img is defined %}
+        <img src="{{ asset('img/' ~ brand.img) }}" alt="Image" class="form-image"> {#the image#}
+    {% endif %}
+{{ form_row(brandForm) }}
+    <div>
+        <button class="submit-button">Envoyer</button>
+    </div>
+{{ form_end(brandForm) }}
+
+</div>
+
+{% endblock %}

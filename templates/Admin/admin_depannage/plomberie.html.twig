@@ -1,0 +1,40 @@
+{% extends "base_admin.html.twig" %}
+{% block title %}Dépannage Plomberie{% endblock %}
+{% block body %}
+
+<h1>Dépannage Plomberie</h1>
+
+<div class="form-container">
+    {{ form_start(depannageForm) }}
+    {% if depannage.img is defined and depannage.img %}
+        <img src="{{ asset('img/' ~ depannage.img) }}" alt="Image" class="form-image"> 
+    {% endif %}
+    {{ form_row(depannageForm) }}
+    <div>
+        <button>Envoyer</button>
+    </div>
+    {{ form_end(depannageForm)}}
+</div>
+
+<div class="form-container">
+    {{ form_start(labelForm) }}
+     {{ form_start(depannageForm) }}
+    {% if label.img is defined and label.img %}
+        <img src="{{ asset('img/' ~ label.img) }}" alt="Image" class="form-image"> 
+    {% endif %}
+    {{ form_row(labelForm) }}
+    <div>
+        <button>Envoyer</button>
+    </div>
+    {{ form_end(labelForm)}}
+</div>
+
+<div class="form-container">
+    {{ form_start(interventionForm) }}
+    {{ form_row(interventionForm) }}
+    <div>
+        <button>Envoyer</button>
+    </div>
+    {{ form_end(interventionForm)}}
+</div>
+{% endblock %}

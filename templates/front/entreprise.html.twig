@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Notre entreprise{% endblock %}
+
+{% block body %}
+
+{% for serviceItem in service %}
+<div class="container-service">
+    <h2 class="entreprise-title">{{ serviceItem.title }}</h2> 
+</div> 
+<div class="container-service">
+    <img src="{{ asset('img/' ~serviceItem.img) }}" alt="Image" class="service-image">
+    <img src="{{ asset('img/' ~serviceItem.img) }}" alt="Image" class="service-image">
+    <img src="{{ asset('img/' ~serviceItem.img) }}" alt="Image" class="service-image">
+</div> 
+{% endfor %} 
+
+{% for entrepriseItem in entreprise %}
+<div class="container-entreprise">
+    <h1 class="entreprise-title">{{ entrepriseItem.title }}</h1> 
+    <p class="entreprise-txt">{{ entrepriseItem.description }}</p>
+</div> 
+{% endfor %} 
+
+{% for teamItem in team %}
+<div class="container-team">
+    <h1 class="titre-team">Notre equipe</h1>
+    <div class="content-team">
+        <div class="team">
+            <img src="{{ asset('img/' ~ teamItem.img) }}" alt="Image" class="team-image">
+            <div>
+                <h1 class="team-title ">{{ teamItem.Name }}</h1> 
+                <p class="team-txt">{{ teamItem.TXT }}</p>
+            </div>
+        </div>
+        <div class="team">
+            <div>
+                <h1 class="team-title ">{{ teamItem.Name }}</h1> 
+                <p class="team-txt">{{ teamItem.TXT }}</p>
+            </div>
+            <img src="{{ asset('img/' ~ teamItem.img) }}" alt="Image" class="team-image">
+        </div>
+    </div>
+</div> 
+{% endfor %} 
+
+{% for brandItem in brand %}
+<div class="container-brand">
+    <h1 class="brand-title">{{ brandItem.Name }}</h1> 
+    <div class="container-service">
+     <img src="{{ asset('img/' ~ brandItem.img) }}" alt="Image" class="service-brand">
+     <img src="{{ asset('img/' ~ brandItem.img) }}" alt="Image" class="service-brand">
+     <img src="{{ asset('img/' ~ brandItem.img) }}" alt="Image" class="service-brand">
+     <img src="{{ asset('img/' ~ brandItem.img) }}" alt="Image" class="service-brand">
+    </div>
+</div> 
+
+{% endfor %} 
+
+
+{% endblock %}

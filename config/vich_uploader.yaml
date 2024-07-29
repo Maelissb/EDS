@@ -1,0 +1,8 @@
+# vich_uploader:
+#   db_driver: orm
+
+# parameters:
+#   images:
+#     url_prefix: /public/img
+#     upload_directory: '%kernel.project_dir%/public/img'
+#     namer: Vich\UploaderBundle\SmartUniqueNamer

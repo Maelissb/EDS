@@ -1,0 +1,14 @@
+{# Footer #}
+
+{% block footer %}
+{% for footer in footer %}
+
+<div class="container-footer">
+    <div class="entreprise-footer">
+        <h1 class="footer-title">{{ footer.ContactTitle }}</h1> 
+        <p class="footer-txt">{{ footer.ContactContain }}</p>
+    </div>
+</div>
+        
+{% endfor %}
+{% endblock %}

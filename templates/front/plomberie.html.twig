@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}plomberie{% endblock %}
+
+{% block body %}
+
+{% for depannageItem in depannage %}
+<div class="container-depannage">
+    <div class="content-depannage"> 
+        <img class="depannage-img" src="{{ asset('img/' ~ depannageItem.img) }}" alt="Image" class="depannage-image">
+        <p class="depannage-txt">{{ depannageItem.TXT }}</p>
+    </div>
+</div> 
+{% endfor %}
+
+{% for labelItem in label %}
+<div class="container-label">
+    <h2 class="label-title">{{ labelItem.title }}</h2>
+    <div class="content-label"> 
+        <img class="label-img" src="{{ asset('img/' ~ labelItem.img) }}" alt="Image">
+        <img class="label-img" src="{{ asset('img/' ~ labelItem.img) }}" alt="Image">
+        <img class="label-img" src="{{ asset('img/' ~ labelItem.img) }}" alt="Image">
+        <img class="label-img" src="{{ asset('img/' ~ labelItem.img) }}" alt="Image">   
+    </div>
+</div> 
+{% endfor %}
+
+{# Map/Zone d’intervention#}
+<div class="container-zone">
+    <div class="content-zone">
+        <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d85247.41641510064!2d-1.2796263419593952!3d48.11058752037116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48092861650877b5%3A0x40ca5cd36e4a3d0!2s35500%20Vitr%C3%A9!5e0!3m2!1sfr!2sfr!4v1715767335897!5m2!1sfr!2sfr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="zone-text">
+            <h2 class="title-zone">Zone d’intervention</h2>
+            <p class="txt-zone">Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

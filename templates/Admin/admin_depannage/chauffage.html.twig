@@ -1,0 +1,32 @@
+{% extends "base_admin.html.twig" %}
+{% block title %}Dépannage Chauffage{% endblock %}
+{% block body %}
+<h1>Dépannage Chauffage</h1>
+
+<div class="form-container">
+    {{ form_start(depannageForm) }}
+    {{ form_row(depannageForm) }}
+    <div>
+        <button>Envoyer</button>
+    </div>
+</div>
+
+<div class="form-container">
+    {{ form_end(depannageForm)}}
+    {{ form_start(labelForm) }}
+    {{ form_row(labelForm) }}
+    <div>
+        <button>Envoyer</button>
+    </div>
+</div>
+
+<div class="form-container">
+    {{ form_end(labelForm)}}
+    {{ form_start(interventionForm) }}
+    {{ form_row(interventionForm) }}
+    <div>
+        <button>Envoyer</button>
+    </div>
+    {{ form_end(interventionForm)}}
+</div>
+{% endblock %}
